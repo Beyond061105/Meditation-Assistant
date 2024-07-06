@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--
+        android:background="?attr/colorPrimary"
+        -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:label="Meditation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#38c4f0"
+            app:popupTheme="@style/Theme.Meditation.PopupOverlay">
+            <TextView
+                android:id="@+id/custom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="#ffff00"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:id="@+id/tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+                            <Button
+                                android:id="@+id/btn_reset"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="重設"
+                                android:textSize="24sp"
+                                android:visibility="visible"
+                                tools:layout_conversion_absoluteHeight="48dp"
+                                tools:layout_conversion_absoluteWidth="88dp"
+                                tools:layout_editor_absoluteX="176dp"
+                                tools:layout_editor_absoluteY="0dp" />
+
+                            <ImageButton
+                                android:id="@+id/btn_light"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@null"
+                                android:src="@drawable/light" />
+
+
+                            <ImageButton
+                                android:id="@+id/btn_sound"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@null"
+                                android:src="@drawable/sound" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textLabelTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="累計(時：分)"
+                                android:background="#ffffff8b"
+                                android:textSize="24sp"
+                                android:padding="3dip"/>
+
+                            <TextView
+                                android:id="@+id/textTotalLight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#91FF9F"
+                                android:padding="3dip"
+                                android:textSize="24sp"
+                                android:text="0:0" />
+
+                            <TextView
+                                android:id="@+id/textTotalSound"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#91FF9F"
+                                android:padding="3dip"
+                                android:textSize="24sp"
+
+                                android:text="0:0" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textLabelRatioTogo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="按比例尚需(分鐘)"
+                                android:textSize="24sp"
+
+                                android:background="#ffffff8b"
+                                android:padding="3dip"/>
+
+                            <TextView
+                                android:id="@+id/textLightRatioTogo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#63CEFF"
+                                android:textSize="24sp"
+                                android:padding="3dip"
+                                android:text="0" />
+
+                            <TextView
+                                android:id="@+id/textSoundRatioTogo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#63CEFF"
+                                android:textSize="24sp"
+                                android:padding="3dip"
+                                android:text="0" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textLabelQuotaTogo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="按規定尚需(分鐘)"
+                                android:background="#ffffff8b"
+                                android:textSize="24sp"
+                                android:padding="3dip"/>
+
+                            <TextView
+                                android:id="@+id/textLightTogo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#FFD597"
+                                android:textSize="24sp"
+                                android:padding="3dip"
+                                android:text="0" />
+
+                            <TextView
+                                android:id="@+id/textSoundTogo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#FFD597"
+                                android:textSize="24sp"
+                                android:padding="3dip"
+                                android:text="0" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:background="#ffe8ffe8"
+                    android:clickable="true"
+                    android:scrollbars="vertical"
+                    android:text=""
+                    android:textSize="24sp"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
